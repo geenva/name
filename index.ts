@@ -3,10 +3,7 @@ interface TProps {
 }
 
 export class Name {
-    name: string;
-    constructor(name: string) {
-        this.name = name
-    }
+    constructor(public readonly name: string) {}
 
     randomRange(myMin: number, myMax: number) {
         return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
@@ -40,6 +37,8 @@ export class Name {
         return newName;
     }
 }
+
+let Lake = new Name("Lake")
 
 export function randomGenerateName(): string {
     let first: boolean = true;
